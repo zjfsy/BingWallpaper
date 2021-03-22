@@ -79,6 +79,7 @@ func jpegToBmp(dirs *string,path *string) bool {
 		return false
 	}
 	*path=*dirs+".tmp"
+	_=os.Remove(*path)
 	dst,err:=os.Create(*path)
 	if err!=nil {
 		return false
